@@ -7,6 +7,8 @@ TagManager:
   - Fire
   - Patrol
   - Manager
+  - Anchor
+  - Axe
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,6 @@ using UnityEngine;
 public class ButtonsScript : MonoBehaviour
 {
     private bool isClicked = false;
-    private Renderer renderer;
     public Material m_Material;
 
     // Start is called before the first frame update
@@ -28,7 +27,6 @@ public class ButtonsScript : MonoBehaviour
             print("button triggered " + gameObject.name);
             GameObject.FindWithTag("Manager").GetComponent<ManagerScript>().clickButton();
             isClicked = true;
-            //renderer.material = m_Material;
             SetAdditionalMaterial(m_Material);
         }
     }
