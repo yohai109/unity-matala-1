@@ -9,6 +9,7 @@ TagManager:
   - Manager
   - Anchor
   - Axe
+  - ST_Axe
   layers:
   - Default
   - TransparentFX
