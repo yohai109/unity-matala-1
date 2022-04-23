@@ -58,4 +58,13 @@ public class patrolScript : MonoBehaviour
     {
         isFinishedFlag = true;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            print("in patrol");
+            GameObject.FindWithTag("Manager").GetComponent<ManagerScript>().PatrolTouchedPlayer();
+        }
+    }
 }

@@ -28,8 +28,12 @@ public class FadeTutorialScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player") 
+        { 
             enterance = false;
+            GameObject.FindGameObjectWithTag("DoorRight").GetComponent<Animation>().Play();
+        }
+
     }
 
     // Update is called once per frame

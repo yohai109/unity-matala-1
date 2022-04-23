@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManagerScript : MonoBehaviour
 {
@@ -74,5 +75,10 @@ public class ManagerScript : MonoBehaviour
         }
         GameObject.FindWithTag("ST_Axe").GetComponent<Renderer>().enabled = true; 
         GameObject.FindWithTag("Axe").GetComponent<Rigidbody>().mass = 12;
+    }
+
+    public void PatrolTouchedPlayer() {
+        print("player touched");
+        SceneManager.LoadScene("MainMenu");
     }
 }
