@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class ButtonsScript : MonoBehaviour
 {
+    private bool isClicked = false;
+    private Renderer renderer;
+    public Material m_Material;
+
     // Start is called before the first frame update
-    void Start() { }
+    void Start() { 
+        //renderer = GetComponent<Renderer>();
+    }
 
     // Update is called once per frame
     void Update() { }
@@ -16,9 +22,22 @@ public class ButtonsScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        print("in trigger function on " + gameObject.name);
+        if (other.gameObject.tag == "Player" && !isClicked)
         {
+            print("button triggered " + gameObject.name);
             GameObject.FindWithTag("Manager").GetComponent<ManagerScript>().clickButton();
+            isClicked = true;
+            //renderer.material = m_Material;
+            SetAdditionalMaterial(m_Material);
         }
+    }
+
+    public void SetAdditionalMaterial(Material newMaterial)
+    {
+        Material[] materialsArray = new Material[(this.GetComponent<Renderer>().materials.Length +1)];
+        this.GetComponent<Renderer>().materials.CopyTo(materialsArray,0);
+        materialsArray[materialsArray.Length - 1] = newMaterial;
+        this.GetComponent<Renderer>().materials = materialsArray;
     }
 }
