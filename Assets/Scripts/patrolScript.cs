@@ -5,12 +5,17 @@ using UnityEngine;
 public class patrolScript : MonoBehaviour
 {
     public Transform[] waypoints;
-    public float speed = 5;
+    public float speed;
     int currentWayPoint;
     Vector3 target,
         moveDirection;
 
     private bool flag = true;
+
+    void Start()
+    {
+        speed = GameObject.FindWithTag("Manager").GetComponent<ManagerScript>().patrolSpeed;
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,5 +36,10 @@ public class patrolScript : MonoBehaviour
         flag = false;
         yield return new WaitForSeconds(5);
         flag = true;
+    }
+
+    public void setSpeed(float newSpeed)
+    {
+        speed = newSpeed;
     }
 }
