@@ -12,6 +12,7 @@ TagManager:
   - ST_Axe
   - DoorRight
   - DoorLeft
+  - Gate
   layers:
   - Default
   - TransparentFX
