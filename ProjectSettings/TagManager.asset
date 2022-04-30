@@ -13,6 +13,7 @@ TagManager:
   - DoorRight
   - DoorLeft
   - Gate
+  - finishCamera
   layers:
   - Default
   - TransparentFX
